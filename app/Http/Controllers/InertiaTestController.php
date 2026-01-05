@@ -22,7 +22,8 @@ class InertiaTestController extends Controller
         // dd($id);
         return Inertia::render('Inertia/Show',
         [
-            'id' => $id
+            'id' => $id,
+            'blog' => InertiaTest::findOrFail($id)
         ]);
     }
 
