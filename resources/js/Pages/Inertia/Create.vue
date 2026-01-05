@@ -1,0 +1,23 @@
+<script setup>
+    import { reactive } from 'vue';
+    // import { Inertia } from '@inertiajs/inertia';
+    import { router } from '@inertiajs/vue3'
+
+    const form = reactive({
+        title: null,
+        content: null
+    })
+
+    const submitFunction = () => {
+        // Inertia.post('/inertia', form);
+        router.post('/inertia', form)
+    }
+</script>
+
+<template>
+    <form @submit.prevent="submitFunction">
+        <input type="text" name="title" v-model="form.title"><br>
+        <input type="text" name="content" v-model="form.content"><br>
+        <button>送信</button>
+    </form>
+</template>
