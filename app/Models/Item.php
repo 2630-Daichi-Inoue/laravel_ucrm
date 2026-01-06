@@ -13,7 +13,7 @@ class Item extends Model
     protected $fillable = [
         'name',
         'memo',
-        'pice',
+        'price',
         'is_selling',
     ];
 

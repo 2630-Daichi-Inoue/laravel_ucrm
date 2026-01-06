@@ -25,7 +25,8 @@ class ItemController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Items/Create');
+
     }
 
     /**
@@ -33,7 +34,13 @@ class ItemController extends Controller
      */
     public function store(StoreItemRequest $request)
     {
-        //
+        Item::create([
+            'name' => $request->name,
+            'memo' => $request->memo,
+            'price' => $request->price,
+        ]);
+
+        return to_route('items.index');
     }
 
     /**
