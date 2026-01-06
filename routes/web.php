@@ -10,6 +10,10 @@ Route::get('/inertia-test', function () {
     return Inertia::render('InertiaTest');
 });
 
+Route::get('/component-test', function () {
+    return Inertia::render('ComponentTest');
+});
+
 Route::get('/inertia/index', [InertiaTestController::class, 'index'])
 ->name('inertia.index');
 
