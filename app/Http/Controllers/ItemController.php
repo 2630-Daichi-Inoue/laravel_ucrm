@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreItemRequest;
 use App\Http\Requests\UpdateItemRequest;
 use App\Models\Item;
+use Illuminate\Validation\Rules\In;
+use Inertia\Inertia;
 
 class ItemController extends Controller
 {
@@ -13,7 +15,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Items/Index');
     }
 
     /**
