@@ -5,6 +5,7 @@
     import { reactive } from 'vue';
     // import { Inertia } from '@inertiajs/inertia';
     import { router } from '@inertiajs/vue3'
+    import BreezeValidationErrors from '@/Components/ValidationErrors.vue';
 
     const props = defineProps({
         item: Object
@@ -18,9 +19,9 @@
         is_selling: props.item.is_selling,
     })
 
-    const storeItem = () => {
+    const updateItem = id => {
         // Inertia.post('/inertia', form);
-        router.post('/items', form)
+        router.put(route('items.update', { item: id }), form)
     }
 </script>
 
@@ -43,7 +44,8 @@
                 >
                     <div class="p-6 text-gray-900">
                         <section class="text-gray-600 body-font relative">
-                            <form @submit.prevent="storeItem">
+                            <BreezeValidationErrors :errors="errors" />
+                            <form @submit.prevent="updateItem(form.id)">
                                 <div class="container px-5 py-8 mx-auto">
                                     <div class="lg:w-1/2 md:w-2/3 mx-auto">
                                         <div class="flex flex-wrap -m-2">
@@ -75,7 +77,7 @@
                                                 </div>
                                             </div>
                                             <div class="p-2 w-full">
-                                                <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">商品登録</button>
+                                                <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">更新する</button>
                                             </div>
 
                                         </div>
