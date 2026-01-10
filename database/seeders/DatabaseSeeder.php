@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Customer;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -19,7 +20,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ItemSeeder::class,
         ]);
-        // User::factory(10)->create();
+
+        Customer::factory(1000)->create();
 
         User::factory()->create([
             'name' => 'Test User',
