@@ -22,6 +22,7 @@
     },
     "dependencies": {
         "@inertiajs/inertia": "^0.11.1",
+        "dayjs": "^1.11.19",
         "micromodal": "^0.6.1",
         "yubinbango-core2": "^0.6.3"
     }
