@@ -22,8 +22,10 @@
     },
     "dependencies": {
         "@inertiajs/inertia": "^0.11.1",
+        "chart.js": "^4.5.1",
         "dayjs": "^1.11.19",
         "micromodal": "^0.6.1",
+        "vue-chart-3": "^4.0.1",
         "yubinbango-core2": "^0.6.3"
     }
 }

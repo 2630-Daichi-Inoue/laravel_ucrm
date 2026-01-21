@@ -23,16 +23,12 @@ const showingNavigationDropdown = ref(false);
                             <!-- Logo -->
                             <div class="flex shrink-0 items-center">
                                 <Link :href="route('dashboard')">
-                                    <ApplicationLogo
-                                        class="block h-20 w-20 fill-current text-gray-800"
-                                    />
+                                    <ApplicationLogo class="block h-20 w-20 fill-current text-gray-800" />
                                 </Link>
                             </div>
 
                             <!-- Navigation Links -->
-                            <div
-                                class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex"
-                            >
+                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink
                                     :href="route('dashboard')"
                                     :active="route().current('dashboard')"
@@ -62,6 +58,12 @@ const showingNavigationDropdown = ref(false);
                                     :active="route().current('customers.index')"
                                 >
                                     顧客管理
+                                </NavLink>
+                                <NavLink
+                                    :href="route('analysis')"
+                                    :active="route().current('analysis')"
+                                >
+                                    データ分析
                                 </NavLink>
 
                             </div>
@@ -194,6 +196,12 @@ const showingNavigationDropdown = ref(false);
                             :active="route().current('customers.index')"
                         >
                             顧客管理
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('analysis')"
+                            :active="route().current('analysis')"
+                        >
+                            データ分析
                         </ResponsiveNavLink>
                     </div>
 
